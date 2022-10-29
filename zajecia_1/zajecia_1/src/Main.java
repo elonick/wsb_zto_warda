@@ -17,13 +17,25 @@ public class Main {
         irland.setGDPinUSD(10000);
         System.out.printf("GDP w Irlandii wynosi: %.2f\n", irland.getGDPinPLN());
 
-        Animal pies = new Animal("Lessie", "Golden", 30.0, FoodType.MIESO);
-        System.out.println("Waga Lessie przed jedzeniem: " + pies.waga);
-        pies.feed(FoodType.MIESO, 2.0);
-        System.out.println("Waga Lessie po 2kg kurczaka: " + pies.waga);
-        pies.feed(FoodType.WARZYWA, 2.0);
-        System.out.println("Waga Lessie po dodatkowych 2kg marchewki: " + pies.waga);
-        pies.feedFavoriteFood(2.0);
-        System.out.println("Waga Lessie po 2kg jej ulubionego jedzenia: " + pies.waga);
+        Animal pies = new Animal("Lessie", "Golden", 30.0, FoodType.MEET);
+        System.out.println("Waga Lessie przed jedzeniem: " + pies.weight);
+        try {
+            pies.feed(FoodType.MEET, -2.0);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Waga Lessie po 2kg kurczaka: " + pies.weight);
+        try {
+            pies.feed(FoodType.GREENS, 2.0);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Waga Lessie po dodatkowych 2kg marchewki: " + pies.weight);
+        try {
+            pies.feed(2.0);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Waga Lessie po 2kg jej ulubionego jedzenia: " + pies.weight);
     }
 }

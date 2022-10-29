@@ -1,5 +1,11 @@
 public enum FoodType {
-    MIESO,
-    WARZYWA,
-    ZBOZE;
+    MEET(0.5),
+    GREENS(0.4),
+    GRAINS(0.3);
+
+    Double caloriesRate;
+
+    FoodType(Double caloriesRate){
+        this.caloriesRate = caloriesRate;
+    }
 }

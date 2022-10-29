@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Najpopularniejsza religia w Indiach: " + indie.religion);
 
         irland.setGDPinUSD(10000);
-        System.out.printf("GDP w Irlandii wynosi: %.2f", irland.getGDPinPLN());
+        System.out.printf("GDP w Irlandii wynosi: %.2f\n", irland.getGDPinPLN());
 
         Animal pies = new Animal("Lessie", "Golden", 30.0, FoodType.MIESO);
         System.out.println("Waga Lessie przed jedzeniem: " + pies.waga);

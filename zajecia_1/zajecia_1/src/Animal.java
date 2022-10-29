@@ -24,6 +24,7 @@ public class Animal {
             case MIESO -> waga += foodWeight * 0.5;
             case ZBOZE -> waga += foodWeight * 0.4;
             case WARZYWA -> waga += foodWeight * 0.3;
+            default -> System.out.println(imie + "Nie ma ulubionego jedzenia");
         }
     }
 

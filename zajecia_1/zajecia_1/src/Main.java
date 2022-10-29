@@ -16,5 +16,14 @@ public class Main {
 
         irland.setGDPinUSD(10000);
         System.out.printf("GDP w Irlandii wynosi: %.2f", irland.getGDPinPLN());
+
+        Animal pies = new Animal("Lessie", "Golden", 30.0, FoodType.MIESO);
+        System.out.println("Waga Lessie przed jedzeniem: " + pies.waga);
+        pies.feed(FoodType.MIESO, 2.0);
+        System.out.println("Waga Lessie po 2kg kurczaka: " + pies.waga);
+        pies.feed(FoodType.WARZYWA, 2.0);
+        System.out.println("Waga Lessie po dodatkowych 2kg marchewki: " + pies.waga);
+        pies.feedFavoriteFood(2.0);
+        System.out.println("Waga Lessie po 2kg jej ulubionego jedzenia: " + pies.waga);
     }
 }
